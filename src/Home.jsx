@@ -1,5 +1,6 @@
-import { useEffect, useState } from "react";
+import {useContext, useEffect, useState} from "react";
 import { About } from "./About";
+import {CharacterContext} from "./Context/CharacterContext";
 
 export function Home() {
   // user state with nested object
@@ -11,7 +12,8 @@ export function Home() {
       street: "Main Street 123",
     },
   });
-  const [characters, setCharacters] = useState([]);
+  // const [characters, setCharacters] = useState([]);
+  const { characters, setCharacters } = useContext(CharacterContext)
 
   useEffect(() => {
     const fetchCharacters = async () => {

@@ -13,10 +13,12 @@ import { ProductSpecs } from "./Components/Products/ProductSpecs";
 import { MainLayout } from "./Components/Layouts/MainLayout";
 import { Contact } from "./Components/Pages/Contact";
 import { Services } from "./Components/Pages/Services";
+import {CharacterProvider} from "./Context/CharacterContext";
 
 const App = () => {
   return (
     <BrowserRouter>
+      <CharacterProvider>
       <Routes>
         {/* Layout Route (no path) - wraps child routes with shared layout */}
         <Route element={<MainLayout />}>
@@ -46,6 +48,7 @@ const App = () => {
         {/*  // specific character route with dynamic id*/}
         {/*</Route>*/}
       </Routes>
+      </CharacterProvider>
     </BrowserRouter>
   );
 };
