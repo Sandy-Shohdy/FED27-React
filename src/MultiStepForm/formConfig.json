@@ -1,0 +1,71 @@
+{
+  "steps": [
+    {
+      "id": 1,
+      "title": "Personal Info",
+      "fields": [
+        {
+          "name": "firstName",
+          "label": "First Name",
+          "type": "text",
+          "placeholder": "Enter your first name",
+          "autocomplete": "given-name",
+          "required": true
+        },
+        {
+          "name": "lastName",
+          "label": "Last Name",
+          "type": "text",
+          "placeholder": "Enter your last name",
+          "autocomplete": "family-name",
+          "required": true
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Contact",
+      "fields": [
+        {
+          "name": "email",
+          "label": "Email",
+          "type": "email",
+          "placeholder": "Enter your email",
+          "autocomplete": "email",
+          "required": true
+        },
+        {
+          "name": "phone",
+          "label": "Phone Number",
+          "type": "tel",
+          "placeholder": "Enter your phone number",
+          "autocomplete": "tel",
+          "required": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Preferences",
+      "fields": [
+        {
+          "name": "notifications",
+          "label": "Enable push notifications",
+          "type": "checkbox",
+          "required": false
+        },
+        {
+          "name": "newsletter",
+          "label": "Subscribe to newsletter",
+          "type": "checkbox",
+          "required": false
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "title": "Review",
+      "fields": []
+    }
+  ]
+}

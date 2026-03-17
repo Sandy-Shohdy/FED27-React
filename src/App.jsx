@@ -13,42 +13,43 @@ import { ProductSpecs } from "./Components/Products/ProductSpecs";
 import { MainLayout } from "./Components/Layouts/MainLayout";
 import { Contact } from "./Components/Pages/Contact";
 import { Services } from "./Components/Pages/Services";
-import {CharacterProvider} from "./Context/CharacterContext";
-import {RefExample} from "./useRef/RefExample";
-
+import { CharacterProvider } from "./Context/CharacterContext";
+import { RefExample } from "./useRef/RefExample";
+import { MultiStepForm } from "./MultiStepForm/MultiStepForm";
 
 const App = () => {
   return (
     <BrowserRouter>
       <CharacterProvider>
-      <Routes>
-        {/* Layout Route (no path) - wraps child routes with shared layout */}
-        <Route element={<MainLayout />}>
-          <Route index element={<Home />} />
-          <Route path="about" element={<About />} />
-          <Route path="contact" element={<Contact />} />
-          <Route path="services" element={<Services />} />
-        </Route>
-
-        {/* Nested Routes Example - go to /dashboard or /dashboard/settings or /dashboard/profile */}
-        <Route path="dashboard" element={<Dashboard />}>
-          <Route index element={<DashboardHome />} />
-          <Route path="settings" element={<Settings />} />
-          <Route path="profile" element={<Profile />} />
-        </Route>
-
-        {/* Nested Dynamic Routes Example - go to /products or /products/1 or /products/1/reviews */}
-        <Route path="products" element={<Products />}>
-          <Route index element={<ProductsList />} />
-          <Route path=":productId" element={<ProductDetail />}>
-            <Route index element={<ProductSpecs />} />
-            <Route path="reviews" element={<ProductReviews />} />
+        <Routes>
+          {/* Layout Route (no path) - wraps child routes with shared layout */}
+          <Route element={<MainLayout />}>
+            <Route index element={<Home />} />
+            <Route path="about" element={<About />} />
+            <Route path="contact" element={<Contact />} />
+            <Route path="services" element={<Services />} />
           </Route>
-        </Route>
+
+          {/* Nested Routes Example - go to /dashboard or /dashboard/settings or /dashboard/profile */}
+          <Route path="dashboard" element={<Dashboard />}>
+            <Route index element={<DashboardHome />} />
+            <Route path="settings" element={<Settings />} />
+            <Route path="profile" element={<Profile />} />
+          </Route>
+
+          {/* Nested Dynamic Routes Example - go to /products or /products/1 or /products/1/reviews */}
+          <Route path="products" element={<Products />}>
+            <Route index element={<ProductsList />} />
+            <Route path=":productId" element={<ProductDetail />}>
+              <Route index element={<ProductSpecs />} />
+              <Route path="reviews" element={<ProductReviews />} />
+            </Route>
+          </Route>
 
           <Route path="/useRef" element={<RefExample />} />
 
-      </Routes>
+          <Route path="/multistep" element={<MultiStepForm />} />
+        </Routes>
       </CharacterProvider>
     </BrowserRouter>
   );
